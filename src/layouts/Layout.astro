@@ -1,0 +1,41 @@
+---
+import "../styles/index.scss"
+
+interface Props {
+	title?: string
+}
+
+const title = Astro.props.title ? "DineUp – " + Astro.props.title : "DineUp"
+const desc =
+	"Die All-In-One Software Lösung von DineUp ist das Tool, welches dein Gastronomie-Business auf ein neues Level hebt!"
+---
+
+<!doctype html>
+<html lang="de-DE">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="darkreader-lock" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="alternate icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<meta name="generator" content={Astro.generator} />
+		<meta property="og:type" content="website" />
+		<!-- <meta property="og:image" content="https://dineup.de/hotlink-ok/preview.png" /> -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={desc} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<!-- <meta name="twitter:image" content="https://dineup.de/hotlink-ok/preview.png" /> -->
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={desc} />
+		<title>{title}</title>
+		<meta name="description" content={desc} />
+	</head>
+
+	<body>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

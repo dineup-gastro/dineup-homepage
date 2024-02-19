@@ -1,0 +1,17 @@
+---
+interface Props {
+	href: string
+}
+
+const href = Astro.props.href
+const isExternal = href.startsWith("https://")
+---
+
+<a
+	href={Astro.props.href}
+	rel="noopener noreferrer"
+	target={isExternal ? "_blank" : undefined}
+	class="my-8 block rounded-md bg-accent p-2 text-background sm:w-fit"
+>
+	<slot />
+</a>
