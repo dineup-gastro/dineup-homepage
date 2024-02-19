@@ -1,0 +1,25 @@
+---
+import Reserved from "../icons/reserved.astro"
+import Menu from "../icons/menu.astro"
+import Bell from "../icons/bell.astro"
+
+interface Props {
+	icon: string
+	class?: string | undefined
+}
+
+const i = Astro.props.icon
+const c = Astro.props.class
+---
+
+{
+	i === "reserved" ? (
+		<Reserved class={c} />
+	) : i === "menu" ? (
+		<Menu class={c} />
+	) : i === "bell" ? (
+		<Bell class={c} />
+	) : (
+		<div class="text-red-500">Icon not found</div>
+	)
+}

@@ -11,8 +11,9 @@
 
 	@media (prefers-color-scheme: dark) {
 		:root {
-			--color-background: 18 18 18;
-			--color-foreground: 245 245 245;
+			--color-background: 30 30 46;
+			--color-foreground: 205 214 244;
+			--color-accent: 249 226 175;
 		}
 	}
 }
@@ -20,11 +21,33 @@
 :root {
 	background-color: rgb(var(--color-background));
 	color: rgb(var(--color-foreground));
-	color-scheme: light dark;
-    font-family: sans-serif;
+	color-scheme: light;
+	font-family: sans-serif;
 }
 
 body * {
 	box-sizing: border-box;
 	min-width: 0px;
+	min-height: 0px;
+}
+
+::selection {
+	background-color: rgb(var(--color-accent));
+	color: rgb(var(--color-background));
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgb(var(--color-accent));
+	border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgb(var(--color-background));
+}
+::-webkit-scrollbar-corner {
+	background-color: rgb(var(--color-background));
 }
