@@ -11,7 +11,7 @@ const isExternal = href.startsWith("https://")
 	href={Astro.props.href}
 	rel="noopener noreferrer"
 	target={isExternal ? "_blank" : undefined}
-	class="my-8 block rounded-md bg-accent p-2 text-background sm:w-fit"
+	class="my-8 block rounded-md bg-accent px-4 py-2 text-background sm:w-fit"
 >
 	<slot />
 </a>
