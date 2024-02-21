@@ -71,8 +71,8 @@ const features: Array<{ title: string; description: string; icon: string }> = [
 				i & 0x1 ? (
 					<div class="my-8 flex flex-col md:flex-row md:place-items-center">
 						<div class="h-fit md:w-1/2 md:text-right">
-							<span class="flex w-fit flex-row align-middle md:ml-auto md:flex-row-reverse">
-								<Icon icon={icon} class="h-8 w-8" />
+							<span class="flex w-fit flex-row align-middle md:ml-auto  md:flex-row-reverse">
+								<Icon icon={icon} class="h-8 w-8 md:ml-2" />
 								<h3 class="text-3xl font-bold">{title}</h3>
 							</span>
 							<p>{description}</p>
@@ -91,7 +91,7 @@ const features: Array<{ title: string; description: string; icon: string }> = [
 					<div class="my-8 flex flex-col md:flex-row-reverse md:place-items-center">
 						<div class="h-fit md:w-1/2">
 							<span class="flex w-fit flex-row items-center">
-								<Icon icon={icon} class="h-8 w-8" />
+								<Icon icon={icon} class="h-8 w-8 md:mr-2" />
 								<h3 class="text-3xl font-bold">{title}</h3>
 							</span>
 							<p>{description}</p>
