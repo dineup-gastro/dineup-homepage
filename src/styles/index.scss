@@ -8,14 +8,6 @@
 		--color-foreground: 0 0 0;
 		--color-accent: 191 143 60;
 	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--color-background: 30 30 46;
-			--color-foreground: 205 214 244;
-			--color-accent: 249 226 175;
-		}
-	}
 }
 
 :root {
