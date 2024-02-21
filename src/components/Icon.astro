@@ -1,7 +1,10 @@
 ---
-import Reserved from "../icons/reserved.astro"
-import Menu from "../icons/menu.astro"
 import Bell from "../icons/bell.astro"
+import Menu from "../icons/menu.astro"
+import Pay from "../icons/pay.astro"
+import Present from "../icons/present.astro"
+import Reserved from "../icons/reserved.astro"
+import Star from "../icons/star.astro"
 
 interface Props {
 	icon: string
@@ -13,12 +16,18 @@ const c = Astro.props.class
 ---
 
 {
-	i === "reserved" ? (
-		<Reserved class={c} />
+	i === "bell" ? (
+		<Bell class={c} />
 	) : i === "menu" ? (
 		<Menu class={c} />
-	) : i === "bell" ? (
-		<Bell class={c} />
+	) : i === "pay" ? (
+		<Pay class={c} />
+	) : i === "present" ? (
+		<Present class={c} />
+	) : i === "reserved" ? (
+		<Reserved class={c} />
+	) : i === "star" ? (
+		<Star class={c} />
 	) : (
 		<div class="text-red-500">Icon not found</div>
 	)
