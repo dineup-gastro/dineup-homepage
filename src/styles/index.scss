@@ -43,3 +43,35 @@ body * {
 ::-webkit-scrollbar-corner {
 	background-color: rgb(var(--color-background));
 }
+
+details {
+	summary {
+		list-style: none;
+		cursor: pointer;
+		&::marker {
+			display: none;
+		}
+		&::before {
+			background-image: url("/chevron.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			content: "";
+			width: 2rem;
+			height: 2rem;
+			display: block;
+			margin-right: 0.5rem;
+			transform: rotate(0deg);
+			transition: transform 0.2s;
+		}
+	}
+	&[open] summary::before {
+		transform: rotate(90deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition-duration: 0ms !important;
+		animation-duration: 0ms !important;
+	}
+}
