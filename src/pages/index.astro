@@ -1,46 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Button from "../components/Button.astro"
-import Icon from "../components/Icon.astro"
-
-const features: Array<{ title: string; description: string; icon: string }> = [
-	{
-		title: "Reservierung",
-		icon: "reserved",
-		description:
-			"DineUp ermöglicht deinen Gästen eine bequeme Online-Reservierung und optimiert die Tischverwaltung in deinem Restaurant. Maximiere so deine Kapazität und sorge für ein reibungsloses Gästeerlebnis.",
-	},
-	{
-		title: "Bestellung",
-		icon: "menu",
-		description:
-			"Eine reibungslose und individuelle Bestellerfahrung ohne Wartezeit und Papierkram. DineUp ermöglicht deinen Gästen, ihre Bestellung direkt online aufzugeben, Wünsche hinzuzufügen.",
-	},
-	{
-		title: "Kellner rufen",
-		icon: "bell",
-		description:
-			"Revolutioniere deinen Service, indem du Gäste unmittelbar mit dem Servicepersonal in Kontakt bringst, sodass sie ihre Wünsche persönlich äußern können, ganz ohne lästiges Winken oder Warten.",
-	},
-	{
-		title: "Bezahlung",
-		icon: "pay",
-		description:
-			"Sorge für ein rundum bequemes und zufriedenstellendes Bezahlerlebnis: Unser flexibles Bezahlsystem ermöglicht es Gästen, mit Bargeld, Karte oder digital zu zahlen. Zudem können sie mühelos die Rechnung teilen.",
-	},
-	{
-		title: "Treueprogramm",
-		icon: "present",
-		description:
-			"Revolutioniere die Kundenbindung: Mit dem einzigartigen und individuell gestaltbaren Treueprogramm können deine Gäste Punkte sammeln und diese gegen attraktive Vorteile einlösen. Schaffe nachhaltige Loyalität unter deinen Gästen und steigere deine Anziehungskraft.",
-	},
-	{
-		title: "Bewertung",
-		icon: "star",
-		description:
-			"Sammele wertvolles Feedback: Unsere Bewertungs-Funktion ermöglicht es deinen Gästen, ihre Erfahrungen mit nur wenigen Klicks zu teilen. Verbessere kontinuierlich deinen Service, stärke die Kundenbindung und zeige potenziellen Gästen, was dein Restaurant einzigartig macht.",
-	},
-]
+import Features from "../components/Features.astro"
 ---
 
 <Layout>
@@ -62,52 +23,5 @@ const features: Array<{ title: string; description: string; icon: string }> = [
 		</div>
 	</section>
 
-	<section class="mx-auto mb-32 max-w-5xl px-4">
-		<h2 class="text-4xl font-bold">Unsere Features auf einen Blick</h2>
-		<p>Eine Vielzahl an digitalen Möglichkeiten, um den Alltag in der Gastronomie effizienter zu gestalten</p>
-
-		{
-			features.map(({ title, description, icon }, i) =>
-				i & 0x1 ? (
-					<div class="my-8 flex flex-col md:flex-row md:place-items-center">
-						<div class="h-fit md:w-1/2 md:text-right">
-							<span class="flex w-fit flex-row align-middle md:ml-auto  md:flex-row-reverse">
-								<Icon icon={icon} class="h-8 w-8 md:ml-2" />
-								<h3 class="text-3xl font-bold">{title}</h3>
-							</span>
-							<p>{description}</p>
-						</div>
-						<span class="mx-auto my-4 w-1/2 md:w-1/2">
-							<img
-								class="md:mx-auto md:max-w-60"
-								src="https://dineup.mathesconsulting.de/wp-content/uploads/2024/01/Kellner-gerufen.png"
-								alt={"Screenshot " + title}
-								loading="lazy"
-								decoding="async"
-							/>
-						</span>
-					</div>
-				) : (
-					<div class="my-8 flex flex-col md:flex-row-reverse md:place-items-center">
-						<div class="h-fit md:w-1/2">
-							<span class="flex w-fit flex-row items-center">
-								<Icon icon={icon} class="h-8 w-8 md:mr-2" />
-								<h3 class="text-3xl font-bold">{title}</h3>
-							</span>
-							<p>{description}</p>
-						</div>
-						<span class="mx-auto my-4 w-1/2 md:w-1/2">
-							<img
-								class="md:mx-auto md:max-w-60"
-								src="https://dineup.mathesconsulting.de/wp-content/uploads/2024/01/Kellner-gerufen.png"
-								alt={"Screenshot " + title}
-								loading="lazy"
-								decoding="async"
-							/>
-						</span>
-					</div>
-				),
-			)
-		}
-	</section>
+	<Features />
 </Layout>

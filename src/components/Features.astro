@@ -1,0 +1,95 @@
+---
+import Icon from "./Icon.astro"
+
+const features: Array<{ title: string; description: string; icon: string }> = [
+	{
+		title: "Reservierung",
+		icon: "reserved",
+		description:
+			"DineUp ermöglicht deinen Gästen eine bequeme Online-Reservierung und optimiert die Tischverwaltung in deinem Restaurant. Maximiere so deine Kapazität und sorge für ein reibungsloses Gästeerlebnis.",
+	},
+	{
+		title: "Bestellung",
+		icon: "menu",
+		description:
+			"Eine reibungslose und individuelle Bestellerfahrung ohne Wartezeit und Papierkram. DineUp ermöglicht deinen Gästen, ihre Bestellung direkt online aufzugeben, Wünsche hinzuzufügen.",
+	},
+	{
+		title: "Kellner rufen",
+		icon: "bell",
+		description:
+			"Revolutioniere deinen Service, indem du Gäste unmittelbar mit dem Servicepersonal in Kontakt bringst, sodass sie ihre Wünsche persönlich äußern können, ganz ohne lästiges Winken oder Warten.",
+	},
+	{
+		title: "Bezahlung",
+		icon: "pay",
+		description:
+			"Sorge für ein rundum bequemes und zufriedenstellendes Bezahlerlebnis: Unser flexibles Bezahlsystem ermöglicht es Gästen, mit Bargeld, Karte oder digital zu zahlen. Zudem können sie mühelos die Rechnung teilen.",
+	},
+	{
+		title: "Treueprogramm",
+		icon: "present",
+		description:
+			"Revolutioniere die Kundenbindung: Mit dem einzigartigen und individuell gestaltbaren Treueprogramm können deine Gäste Punkte sammeln und diese gegen attraktive Vorteile einlösen. Schaffe nachhaltige Loyalität unter deinen Gästen und steigere deine Anziehungskraft.",
+	},
+	{
+		title: "Bewertung",
+		icon: "star",
+		description:
+			"Sammele wertvolles Feedback: Unsere Bewertungs-Funktion ermöglicht es deinen Gästen, ihre Erfahrungen mit nur wenigen Klicks zu teilen. Verbessere kontinuierlich deinen Service, stärke die Kundenbindung und zeige potenziellen Gästen, was dein Restaurant einzigartig macht.",
+	},
+]
+---
+
+<section class="mx-auto mb-32 max-w-5xl px-4">
+	<h2 class="text-4xl font-bold">Unsere Features auf einen Blick</h2>
+	<p>Eine Vielzahl an digitalen Möglichkeiten, um den Alltag in der Gastronomie effizienter zu gestalten</p>
+	{
+		features.map(({ title, description, icon }) => (
+			<details>
+				<summary class="flex cursor-pointer flex-row border-solid border-b-foreground">
+					<Icon name={icon} class="mr-2 h-8 w-8" />
+					<h3 class="text-3xl font-bold">{title}</h3>
+				</summary>
+				<p>{description}</p>
+				<img
+					class="mx-auto mb-16 w-3/4 md:max-w-60"
+					src="https://dineup.mathesconsulting.de/wp-content/uploads/2024/01/Kellner-gerufen.png"
+					alt={"Screenshot " + title}
+					loading="lazy"
+					decoding="async"
+				/>
+			</details>
+		))
+	}
+</section>
+
+<script>
+	const details = document.getElementsByTagName("details")
+	function openDetails(x: HTMLDetailsElement) {
+		x.open = !x.open
+		if (!x.open) {
+			return
+		}
+
+		for (const e of details) {
+			if (e === x) continue
+			e.open = false
+		}
+		window.setTimeout(() => {
+			x.scrollIntoView({ behavior: "smooth", block: "start" })
+		}, 10)
+	}
+	for (const e of details) {
+		const sum = e.querySelector("summary")
+		if (!sum) continue
+		sum.addEventListener(
+			"click",
+			(ev) => {
+				ev.preventDefault()
+				openDetails(e)
+			},
+			{ passive: false },
+		)
+	}
+</script>
