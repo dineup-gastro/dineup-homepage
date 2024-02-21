@@ -48,7 +48,7 @@ const features: Array<{ title: string; description: string; icon: string }> = [
 		<div class="my-auto h-fit max-w-5xl p-4 sm:flex sm:justify-between">
 			<dev class="">
 				<h1 class="block">
-					<img src="/lettering.svg" alt="DineUp" class="mb-4 h-16 w-auto" />
+					<img src="/lettering.svg" alt="DineUp" class="mb-4 h-16 w-auto" aria-valuetext="DineUp" />
 				</h1>
 				<p class="text-lg">Digitalisierung Ihrer Gastronomie.</p>
 				<p class="text-lg">Entlastung Ihrer Mitarbeiter.</p>
@@ -71,9 +71,9 @@ const features: Array<{ title: string; description: string; icon: string }> = [
 				i & 0x1 ? (
 					<div class="my-8 flex flex-col md:flex-row md:place-items-center">
 						<div class="h-fit md:w-1/2 md:text-right">
-							<span class="ml-auto flex w-fit flex-row align-middle">
+							<span class="flex w-fit flex-row align-middle md:ml-auto md:flex-row-reverse">
+								<Icon icon={icon} class="h-8 w-8" />
 								<h3 class="text-3xl font-bold">{title}</h3>
-								<Icon icon={icon} class="h-8" />
 							</span>
 							<p>{description}</p>
 						</div>
@@ -91,7 +91,7 @@ const features: Array<{ title: string; description: string; icon: string }> = [
 					<div class="my-8 flex flex-col md:flex-row-reverse md:place-items-center">
 						<div class="h-fit md:w-1/2">
 							<span class="flex w-fit flex-row items-center">
-								<Icon icon={icon} class="h-8" />
+								<Icon icon={icon} class="h-8 w-8" />
 								<h3 class="text-3xl font-bold">{title}</h3>
 							</span>
 							<p>{description}</p>
