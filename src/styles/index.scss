@@ -48,8 +48,9 @@ details {
 	summary {
 		list-style: none;
 		cursor: pointer;
-		&::marker {
-			display: none;
+		&::marker,
+        &::-webkit-details-marker {
+			display: none !important;
 		}
 		&::before {
 			background-image: url("/chevron.svg");
